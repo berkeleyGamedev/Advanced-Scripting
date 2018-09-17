@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DisallowMultipleComponent]
+[RequireComponent(typeof(ParticleSystem))] // Used because I call GetComponent<ParticleSystem>()
 public class MouseInput : MonoBehaviour
 {
-   #region Editor Variables
-   [SerializeField]
-   [Tooltip("The effects that should be played whenever the player clicks somewhere.")]
+   #region Cached Components
+   // The effects that should be played whenever the player clicks somewhere.
    private ParticleSystem m_Particles;
+   #endregion
+
+   #region First Time Initialization and Set Up
+   private void Awake()
+   {
+      m_Particles = GetComponent<ParticleSystem>();
+   }
    #endregion
 
    #region Main Updates
