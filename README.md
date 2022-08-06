@@ -1,1 +1,1 @@
-The lab spec can be found in the repo (inside the assets folder) as a pdf.
+The lab spec can be found in the repo as a pdf.
