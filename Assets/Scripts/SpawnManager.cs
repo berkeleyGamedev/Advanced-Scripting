@@ -38,7 +38,7 @@ public class SpawnManager : MonoBehaviour
       // Check if its time to spawn a particular enemy
       // If it is, just spawn the enemy using Instantiate(m_EnemyTypes[i].EnemyPrefab)
          // Make sure to reset the timer back to the appropriate value based on SpawnRate
-      // Else, increase the timer using Time.deltaTime
+      // Else, decrease the timer using Time.deltaTime
    }
    #endregion
 }
