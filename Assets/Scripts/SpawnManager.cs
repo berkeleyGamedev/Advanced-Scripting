@@ -70,7 +70,8 @@ public struct EnemySpawnInfo
 
     public float FirstSpawnTime
     {
-        get { return m_FirstSpawnTime; }
+        // This is another way to do the same get syntax above using lambdas.
+        get => m_FirstSpawnTime;
     }
 
     // Doing (1 / SpawnRate) might be more useful than directly using SpawnRate
