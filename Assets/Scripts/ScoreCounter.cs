@@ -1,11 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 [DisallowMultipleComponent]
-public class Score : MonoBehaviour
+public class ScoreCounter : MonoBehaviour
 {
+    #region Singleton Creation
+    public static ScoreCounter Instance { get; private set; }
+    private void Awake()
+    {
+        Instance = this;
+    }
+    #endregion
+
     #region Editor Variables
     [SerializeField]
     [Tooltip("The text component that is displaying the score. The text value " +
@@ -17,27 +23,12 @@ public class Score : MonoBehaviour
     private int m_Score;
     #endregion
 
-    #region Singletons
-    private static Score st;
-    #endregion
-
     #region First Time Initialization and Set Up
-    private void Awake()
-    {
-        st = this;
-    }
 
     public void Start()
     {
         m_Score = 0;
         AddScore(0);
-    }
-    #endregion
-
-    #region Accessors and Mutators
-    public static Score Singleton
-    {
-        get { return st; }
     }
     #endregion
 
